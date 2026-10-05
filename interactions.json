@@ -1,0 +1,179 @@
+{
+  "_about": "Pairs are checked only between ingredients from DIFFERENT brands (e.g. Telma-AM alone never warns about its own telmisartan + amlodipine). Levels: warning = do not combine unless a doctor says so; caution = tell your doctor or pharmacist you take both; timing = can be taken, but not at the same time. Every pair is taken from a line on the listed source page(s).",
+  "same_ingredient": {
+    "level": "warning",
+    "message": "Both medicines contain {ingredient}. Taking them together could mean taking too much. Ask your doctor or pharmacist before taking both."
+  },
+  "same_class": {
+    "classes": ["NSAID", "Statin", "PPI (acid reducer)", "Antihistamine"],
+    "level": "caution",
+    "message": "Both medicines are the same type of medicine ({class}). Ask your doctor or pharmacist whether you should take both."
+  },
+  "pairs": [
+    {
+      "a": "ibuprofen", "b": "diclofenac", "level": "warning",
+      "message": "Ibuprofen and diclofenac are both NSAID painkillers. Taking them together raises the risk of side effects like stomach ulcers. Do not take both unless a doctor says so.",
+      "sources": ["https://www.nhs.uk/medicines/ibuprofen-for-adults/", "https://www.nhs.uk/medicines/diclofenac/taking-diclofenac-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "ibuprofen", "b": "aspirin", "level": "warning",
+      "message": "Ibuprofen and aspirin are both NSAIDs. Taking them together raises the risk of serious side effects like stomach ulcers. Do not take both unless a doctor says so.",
+      "sources": ["https://www.nhs.uk/medicines/ibuprofen-for-adults/", "https://www.nhs.uk/medicines/aspirin/"]
+    },
+    {
+      "a": "diclofenac", "b": "aspirin", "level": "warning",
+      "message": "Diclofenac and aspirin are both NSAIDs. Taking them together raises the risk of side effects like stomach problems. Do not take both without talking to a doctor.",
+      "sources": ["https://www.nhs.uk/medicines/diclofenac/taking-diclofenac-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "azithromycin", "b": "domperidone", "level": "warning",
+      "message": "Azithromycin and domperidone can both affect your heartbeat. Tell your doctor before taking them together.",
+      "sources": ["https://www.nhs.uk/medicines/azithromycin/taking-azithromycin-with-other-medicines-and-herbal-supplements/", "https://www.nhs.uk/medicines/domperidone/taking-domperidone-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "telmisartan", "b": "ibuprofen", "level": "caution",
+      "message": "NSAID painkillers like ibuprofen can affect telmisartan. Do not start ibuprofen without asking your doctor.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a601249.html"]
+    },
+    {
+      "a": "telmisartan", "b": "diclofenac", "level": "caution",
+      "message": "NSAID painkillers like diclofenac can affect telmisartan. Do not start diclofenac without asking your doctor.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a601249.html"]
+    },
+    {
+      "a": "telmisartan", "b": "aspirin", "level": "caution",
+      "message": "Aspirin may interact with telmisartan. Make sure your doctor knows you take both.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a601249.html", "https://www.nhs.uk/medicines/aspirin/"]
+    },
+    {
+      "a": "amlodipine", "b": "telmisartan", "level": "caution",
+      "message": "These are two blood pressure medicines. Make sure your doctor knows you take both.",
+      "sources": ["https://www.nhs.uk/medicines/amlodipine/"]
+    },
+    {
+      "a": "amlodipine", "b": "ibuprofen", "level": "caution",
+      "message": "Ibuprofen may not mix well with blood pressure medicines like amlodipine. Check with your pharmacist or doctor.",
+      "sources": ["https://www.nhs.uk/medicines/ibuprofen-for-adults/"]
+    },
+    {
+      "a": "amlodipine", "b": "diclofenac", "level": "caution",
+      "message": "Diclofenac may not mix well with blood pressure medicines like amlodipine. Check with your doctor or pharmacist.",
+      "sources": ["https://www.nhs.uk/medicines/diclofenac/taking-diclofenac-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "amlodipine", "b": "aspirin", "level": "caution",
+      "message": "Aspirin may not mix well with some blood pressure medicines. Make sure your doctor knows you take both.",
+      "sources": ["https://www.nhs.uk/medicines/aspirin/"]
+    },
+    {
+      "a": "glimepiride", "b": "ibuprofen", "level": "caution",
+      "message": "NSAID painkillers like ibuprofen may interact with glimepiride. Do not start ibuprofen without asking your doctor.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a696016.html"]
+    },
+    {
+      "a": "glimepiride", "b": "diclofenac", "level": "caution",
+      "message": "NSAID painkillers like diclofenac may interact with glimepiride. Do not start diclofenac without asking your doctor.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a696016.html"]
+    },
+    {
+      "a": "glimepiride", "b": "aspirin", "level": "caution",
+      "message": "Aspirin may interact with glimepiride. Make sure your doctor knows you take both.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a696016.html"]
+    },
+    {
+      "a": "metformin", "b": "ibuprofen", "level": "caution",
+      "message": "NSAID painkillers like ibuprofen may not mix well with metformin. Tell your doctor or pharmacist you take both.",
+      "sources": ["https://www.nhs.uk/medicines/metformin/"]
+    },
+    {
+      "a": "metformin", "b": "diclofenac", "level": "caution",
+      "message": "NSAID painkillers like diclofenac may not mix well with metformin. Tell your doctor or pharmacist you take both.",
+      "sources": ["https://www.nhs.uk/medicines/metformin/"]
+    },
+    {
+      "a": "levothyroxine", "b": "calcium", "level": "timing",
+      "message": "Calcium can stop levothyroxine working as well. Do not take them at the same time - ask your pharmacist how far apart to take them.",
+      "sources": ["https://www.nhs.uk/medicines/levothyroxine/", "https://medlineplus.gov/druginfo/meds/a601032.html"]
+    },
+    {
+      "a": "levothyroxine", "b": "omeprazole", "level": "caution",
+      "message": "Stomach acid medicines like omeprazole may not mix well with levothyroxine. Tell your doctor you take both.",
+      "sources": ["https://www.nhs.uk/medicines/levothyroxine/"]
+    },
+    {
+      "a": "levothyroxine", "b": "esomeprazole", "level": "caution",
+      "message": "Stomach acid medicines like esomeprazole may not mix well with levothyroxine. Tell your doctor you take both.",
+      "sources": ["https://www.nhs.uk/medicines/levothyroxine/"]
+    },
+    {
+      "a": "levothyroxine", "b": "pantoprazole", "level": "caution",
+      "message": "Stomach acid medicines like pantoprazole may not mix well with levothyroxine. Tell your doctor you take both.",
+      "sources": ["https://www.nhs.uk/medicines/levothyroxine/"]
+    },
+    {
+      "a": "levothyroxine", "b": "famotidine", "level": "caution",
+      "message": "Stomach acid medicines like famotidine may not mix well with levothyroxine. Tell your doctor you take both.",
+      "sources": ["https://www.nhs.uk/medicines/levothyroxine/"]
+    },
+    {
+      "a": "famotidine", "b": "omeprazole", "level": "caution",
+      "message": "Famotidine and omeprazole both reduce stomach acid. Do not take both unless your doctor agrees.",
+      "sources": ["https://www.nhs.uk/medicines/omeprazole/", "https://medlineplus.gov/druginfo/meds/a687011.html"]
+    },
+    {
+      "a": "famotidine", "b": "esomeprazole", "level": "caution",
+      "message": "Famotidine and esomeprazole are both heartburn medicines. Do not take both unless your doctor agrees.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a687011.html"]
+    },
+    {
+      "a": "famotidine", "b": "pantoprazole", "level": "caution",
+      "message": "Famotidine and pantoprazole are both heartburn medicines. Do not take both unless your doctor agrees.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a687011.html"]
+    },
+    {
+      "a": "azithromycin", "b": "atorvastatin", "level": "caution",
+      "message": "Azithromycin may not mix well with statins like atorvastatin. Tell your doctor before taking them together.",
+      "sources": ["https://www.nhs.uk/medicines/azithromycin/taking-azithromycin-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "domperidone", "b": "amoxicillin", "level": "caution",
+      "message": "Some antibiotics can affect domperidone. Tell your doctor or pharmacist you take both.",
+      "sources": ["https://www.nhs.uk/medicines/domperidone/taking-domperidone-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "domperidone", "b": "amlodipine", "level": "caution",
+      "message": "Domperidone may not mix well with heart or blood pressure medicines. Tell your doctor or pharmacist you take both.",
+      "sources": ["https://www.nhs.uk/medicines/domperidone/taking-domperidone-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "domperidone", "b": "telmisartan", "level": "caution",
+      "message": "Domperidone may not mix well with heart or blood pressure medicines. Tell your doctor or pharmacist you take both.",
+      "sources": ["https://www.nhs.uk/medicines/domperidone/taking-domperidone-with-other-medicines-and-herbal-supplements/"]
+    },
+    {
+      "a": "paracetamol", "b": "domperidone", "level": "caution",
+      "message": "Anti-sickness medicines like domperidone may not mix well with paracetamol. Check with your pharmacist.",
+      "sources": ["https://www.nhs.uk/medicines/paracetamol-for-adults/"]
+    },
+    {
+      "a": "cetirizine", "b": "levocetirizine", "level": "caution",
+      "message": "Cetirizine and levocetirizine are very similar allergy medicines and both can make you sleepy. Ask your pharmacist before taking both.",
+      "sources": ["https://www.nhs.uk/medicines/cetirizine/"]
+    },
+    {
+      "a": "cetirizine", "b": "chlorzoxazone", "level": "caution",
+      "message": "Both can make you drowsy. Taking them together may make you sleepier. Check with your pharmacist and do not drive if you feel sleepy.",
+      "sources": ["https://www.nhs.uk/medicines/cetirizine/", "https://medlineplus.gov/druginfo/meds/a682577.html"]
+    },
+    {
+      "a": "levocetirizine", "b": "chlorzoxazone", "level": "caution",
+      "message": "Both can make you drowsy. Taking them together may make you sleepier. Check with your pharmacist and do not drive if you feel sleepy.",
+      "sources": ["https://medlineplus.gov/druginfo/meds/a607056.html", "https://medlineplus.gov/druginfo/meds/a682577.html"]
+    },
+    {
+      "a": "vitamin_d3", "b": "calcium", "level": "caution",
+      "message": "Do not take extra calcium or vitamin D supplements together unless your doctor agrees - too much calcium can be harmful.",
+      "sources": ["https://www.nhs.uk/medicines/colecalciferol/taking-colecalciferol-with-other-medicines-and-herbal-supplements/"]
+    }
+  ]
+}

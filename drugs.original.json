@@ -1,0 +1,610 @@
+[
+  {
+    "key": "paracetamol",
+    "name": "Paracetamol",
+    "class": "Painkiller",
+    "source": "https://www.nhs.uk/medicines/paracetamol-for-adults/",
+    "used_for": "Relieves pain (such as headache, toothache, period pain, aches) and brings down a fever.",
+    "how_to_take": "Can be taken with or without food. Leave at least 4 hours between doses and take no more than 4 doses in 24 hours. Do not use for more than 3 days unless a doctor says so.",
+    "common_side_effects": [
+      "Side effects are very rare when taken at the right dose"
+    ],
+    "serious_warnings": [
+      "If you have taken too much, get urgent medical help even if you feel well",
+      "Swelling of the face or throat, rash, or trouble breathing (allergic reaction) - get emergency help"
+    ],
+    "avoid": [
+      "Other medicines that also contain paracetamol (risk of overdose)",
+      "Drinking a lot of alcohol"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "ibuprofen",
+    "name": "Ibuprofen",
+    "class": "NSAID",
+    "source": "https://www.nhs.uk/medicines/ibuprofen-for-adults/",
+    "used_for": "Relieves pain, reduces swelling (inflammation) and brings down a fever.",
+    "how_to_take": "Take with or just after food or a glass of milk to protect your stomach. Swallow tablets with water.",
+    "common_side_effects": [
+      "Feeling sick",
+      "Indigestion or stomach pain",
+      "Diarrhoea",
+      "Wind"
+    ],
+    "serious_warnings": [
+      "Black or bloody poo, or vomiting blood (bleeding in the stomach) - get urgent help",
+      "Severe stomach pain",
+      "Passing much less urine than usual",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Other NSAID painkillers (such as diclofenac) or aspirin, unless a doctor says so",
+      "Drinking a lot of alcohol",
+      "Ask a doctor first if you have stomach ulcers, asthma, or heart, kidney or blood pressure problems"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "diclofenac",
+    "name": "Diclofenac",
+    "class": "NSAID",
+    "source": "https://www.nhs.uk/medicines/diclofenac/",
+    "used_for": "Relieves pain and swelling, for example from joint problems, sprains or injuries.",
+    "how_to_take": "Take with or just after food. Swallow tablets whole with water. Use the lowest dose for the shortest time.",
+    "common_side_effects": [
+      "Stomach ache or indigestion",
+      "Feeling sick",
+      "Diarrhoea",
+      "Headache",
+      "Dizziness"
+    ],
+    "serious_warnings": [
+      "Black or bloody poo, or vomiting blood - get urgent help",
+      "Chest pain, or sudden weakness on one side of the body - call emergency services",
+      "Yellow skin or eyes",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Other NSAID painkillers (such as ibuprofen) or aspirin, unless a doctor says so",
+      "Drinking a lot of alcohol",
+      "Ask a doctor first if you have heart disease, high blood pressure, or stomach ulcers"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "chlorzoxazone",
+    "name": "Chlorzoxazone",
+    "class": "Muscle relaxant",
+    "source": "https://medlineplus.gov/druginfo/meds/a682577.html",
+    "used_for": "Relaxes tight muscles and eases muscle spasm and pain, usually along with rest and other treatment.",
+    "how_to_take": "Take exactly as prescribed. It can make you drowsy, so be careful until you know how it affects you.",
+    "common_side_effects": [
+      "Drowsiness",
+      "Dizziness or light-headedness",
+      "Headache",
+      "Upset stomach"
+    ],
+    "serious_warnings": [
+      "Yellow skin or eyes, dark urine, pain in the upper right of the stomach, unusual tiredness or loss of appetite (possible liver problem) - stop and contact a doctor",
+      "Rash or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Alcohol",
+      "Other medicines that make you sleepy",
+      "Driving or using machines if you feel drowsy"
+    ],
+    "notes": "Urine may turn orange or reddish-purple; this is harmless. Link from memory: confirm it opens the chlorzoxazone page.",
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "serratiopeptidase",
+    "name": "Serratiopeptidase",
+    "class": "Enzyme",
+    "source": null,
+    "used_for": "",
+    "how_to_take": "",
+    "common_side_effects": [],
+    "serious_warnings": [],
+    "avoid": [],
+    "notes": "No information in trusted sources (not an approved medicine in the UK or US). App should say: limited reliable information is available for this ingredient; please ask your pharmacist or doctor.",
+    "no_trusted_source": true,
+    "verified": false
+  },
+  {
+    "key": "metformin",
+    "name": "Metformin",
+    "class": "Diabetes",
+    "source": "https://www.nhs.uk/medicines/metformin/",
+    "used_for": "Lowers blood sugar in type 2 diabetes.",
+    "how_to_take": "Take with a meal or just after, to reduce stomach upset. Swallow slow-release tablets whole; do not crush or chew them.",
+    "common_side_effects": [
+      "Feeling sick",
+      "Diarrhoea",
+      "Stomach ache",
+      "Loss of appetite",
+      "Metallic taste in the mouth"
+    ],
+    "serious_warnings": [
+      "Feeling very weak or tired, muscle pain, fast breathing, or feeling very cold (rare but serious) - get urgent medical help"
+    ],
+    "avoid": [
+      "Drinking a lot of alcohol",
+      "Tell the doctor you take metformin before any scan that uses dye"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "glimepiride",
+    "name": "Glimepiride",
+    "class": "Diabetes",
+    "source": "https://medlineplus.gov/druginfo/meds/a696016.html",
+    "used_for": "Lowers blood sugar in type 2 diabetes by helping your body release more insulin.",
+    "how_to_take": "Usually taken once a day with breakfast or the first main meal. Do not skip meals after taking it.",
+    "common_side_effects": [
+      "Low blood sugar",
+      "Feeling sick",
+      "Headache",
+      "Dizziness"
+    ],
+    "serious_warnings": [
+      "Shaking, sweating, hunger, confusion or a fast heartbeat (low blood sugar) - eat or drink something sugary straight away",
+      "If someone with low blood sugar becomes drowsy or unconscious - call emergency services",
+      "Skin may burn more easily in the sun"
+    ],
+    "avoid": [
+      "Skipping or delaying meals",
+      "Alcohol, which raises the risk of low blood sugar",
+      "Too much sun without protection"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "amlodipine",
+    "name": "Amlodipine",
+    "class": "Blood pressure",
+    "source": "https://www.nhs.uk/medicines/amlodipine/",
+    "used_for": "Treats high blood pressure and prevents chest pain caused by heart disease (angina).",
+    "how_to_take": "Take once a day at the same time, with or without food. Keep taking it even if you feel well.",
+    "common_side_effects": [
+      "Headache",
+      "Flushing (red, warm face)",
+      "Swollen ankles",
+      "Feeling tired",
+      "Dizziness",
+      "Feeling your heartbeat (palpitations)"
+    ],
+    "serious_warnings": [
+      "Chest pain that is new or getting worse - get urgent help",
+      "Yellow skin or eyes",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Large amounts of grapefruit or grapefruit juice",
+      "Stopping suddenly without talking to your doctor"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "telmisartan",
+    "name": "Telmisartan",
+    "class": "Blood pressure",
+    "source": "https://medlineplus.gov/druginfo/meds/a601249.html",
+    "used_for": "Treats high blood pressure and helps lower the risk of heart attack and stroke in some people.",
+    "how_to_take": "Take once a day at the same time, with or without food. Keep taking it even if you feel well.",
+    "common_side_effects": [
+      "Dizziness",
+      "Back pain",
+      "Blocked or runny nose, sore throat",
+      "Diarrhoea"
+    ],
+    "serious_warnings": [
+      "Fainting",
+      "Swelling of the face, lips, tongue or throat - get emergency help",
+      "Muscle weakness or an irregular heartbeat (possible high potassium)",
+      "Must not be used in pregnancy: if you become pregnant, contact your doctor straight away"
+    ],
+    "avoid": [
+      "Potassium supplements or salt substitutes, unless your doctor agrees",
+      "NSAID painkillers such as ibuprofen or diclofenac, unless your doctor agrees"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "atorvastatin",
+    "name": "Atorvastatin",
+    "class": "Statin",
+    "source": "https://www.nhs.uk/medicines/atorvastatin/",
+    "used_for": "Lowers cholesterol and reduces the risk of heart attack and stroke.",
+    "how_to_take": "Take once a day at the same time, with or without food.",
+    "common_side_effects": [
+      "Headache",
+      "Cold-like symptoms",
+      "Feeling sick",
+      "Diarrhoea or constipation",
+      "Muscle or joint pain"
+    ],
+    "serious_warnings": [
+      "Unexplained muscle pain, tenderness or weakness - contact a doctor straight away",
+      "Yellow skin or eyes",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Large amounts of grapefruit juice",
+      "Drinking a lot of alcohol",
+      "Taking it in pregnancy"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "rosuvastatin",
+    "name": "Rosuvastatin",
+    "class": "Statin",
+    "source": "https://www.nhs.uk/medicines/rosuvastatin/",
+    "used_for": "Lowers cholesterol and reduces the risk of heart attack and stroke.",
+    "how_to_take": "Take once a day at the same time, with or without food.",
+    "common_side_effects": [
+      "Headache",
+      "Feeling sick",
+      "Stomach pain",
+      "Constipation",
+      "Muscle aches",
+      "Feeling weak"
+    ],
+    "serious_warnings": [
+      "Unexplained muscle pain, tenderness or weakness - contact a doctor straight away",
+      "Yellow skin or eyes",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Indigestion remedies (antacids) within 2 hours of a dose",
+      "Drinking a lot of alcohol",
+      "Taking it in pregnancy"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "levothyroxine",
+    "name": "Levothyroxine",
+    "class": "Thyroid",
+    "source": "https://www.nhs.uk/medicines/levothyroxine/",
+    "used_for": "Replaces thyroid hormone when the thyroid gland is underactive.",
+    "how_to_take": "Take once a day in the morning on an empty stomach, at least 30 minutes before breakfast, tea or coffee. Usually taken for life; do not stop unless your doctor says so.",
+    "common_side_effects": [
+      "Usually none at the right dose",
+      "If the dose is too high: fast heartbeat, sweating, feeling shaky, trouble sleeping, weight loss, diarrhoea"
+    ],
+    "serious_warnings": [
+      "Chest pain or a very fast or irregular heartbeat - get urgent help",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Calcium or iron supplements and indigestion remedies within 4 hours of your dose",
+      "Taking it with coffee, soya or high-fibre food"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "pantoprazole",
+    "name": "Pantoprazole",
+    "class": "PPI (acid reducer)",
+    "source": "https://www.nhs.uk/medicines/pantoprazole/",
+    "used_for": "Reduces stomach acid. Treats heartburn, acid reflux and stomach ulcers, and protects the stomach when taking some painkillers.",
+    "how_to_take": "Take once a day, usually in the morning about 1 hour before a meal. Swallow whole; do not crush or chew.",
+    "common_side_effects": [
+      "Headache",
+      "Diarrhoea",
+      "Feeling sick",
+      "Stomach pain",
+      "Wind",
+      "Dizziness"
+    ],
+    "serious_warnings": [
+      "Severe or watery diarrhoea that does not stop, especially with fever - contact a doctor",
+      "Joint pain with a rash on skin exposed to the sun",
+      "Yellow skin or eyes"
+    ],
+    "avoid": [
+      "Using it for a long time without a doctor reviewing it",
+      "Spicy or fatty food and alcohol, which can make symptoms worse"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "omeprazole",
+    "name": "Omeprazole",
+    "class": "PPI (acid reducer)",
+    "source": "https://www.nhs.uk/medicines/omeprazole/",
+    "used_for": "Reduces stomach acid. Treats heartburn, acid reflux and stomach ulcers.",
+    "how_to_take": "Take once a day, usually in the morning before food. Swallow capsules whole.",
+    "common_side_effects": [
+      "Headache",
+      "Diarrhoea or constipation",
+      "Feeling sick",
+      "Stomach pain",
+      "Wind"
+    ],
+    "serious_warnings": [
+      "Severe or watery diarrhoea that does not stop, especially with fever - contact a doctor",
+      "Joint pain with a rash on skin exposed to the sun",
+      "Yellow skin or eyes"
+    ],
+    "avoid": [
+      "Using it for a long time without a doctor reviewing it",
+      "Spicy or fatty food and alcohol, which can make symptoms worse"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "esomeprazole",
+    "name": "Esomeprazole",
+    "class": "PPI (acid reducer)",
+    "source": "https://www.nhs.uk/medicines/esomeprazole/",
+    "used_for": "Reduces stomach acid. Treats heartburn, acid reflux and stomach ulcers.",
+    "how_to_take": "Take once a day, at least 1 hour before a meal. Swallow capsules whole.",
+    "common_side_effects": [
+      "Headache",
+      "Diarrhoea or constipation",
+      "Feeling sick",
+      "Stomach pain",
+      "Wind"
+    ],
+    "serious_warnings": [
+      "Severe or watery diarrhoea that does not stop, especially with fever - contact a doctor",
+      "Joint pain with a rash on skin exposed to the sun",
+      "Yellow skin or eyes"
+    ],
+    "avoid": [
+      "Using it for a long time without a doctor reviewing it",
+      "Spicy or fatty food and alcohol, which can make symptoms worse"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "domperidone",
+    "name": "Domperidone",
+    "class": "Anti-sickness",
+    "source": "https://www.nhs.uk/medicines/domperidone/",
+    "used_for": "Relieves feeling sick (nausea) and being sick (vomiting).",
+    "how_to_take": "Take before meals. It is usually only for a short time (often no longer than a week).",
+    "common_side_effects": [
+      "Dry mouth"
+    ],
+    "serious_warnings": [
+      "A fast or irregular heartbeat, or fainting - get urgent medical help (risk is higher over age 60)",
+      "Shaking or movements you cannot control",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Taking it for longer than prescribed",
+      "Some antibiotics and antifungal medicines that affect heart rhythm - ask a pharmacist before combining"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "famotidine",
+    "name": "Famotidine",
+    "class": "H2 blocker (acid reducer)",
+    "source": "https://medlineplus.gov/druginfo/meds/a687011.html",
+    "used_for": "Reduces stomach acid. Treats ulcers, acid reflux and heartburn.",
+    "how_to_take": "Take as prescribed, with or without food. Often taken once a day at bedtime or twice a day.",
+    "common_side_effects": [
+      "Headache",
+      "Dizziness",
+      "Constipation",
+      "Diarrhoea"
+    ],
+    "serious_warnings": [
+      "Fast or irregular heartbeat - get urgent help",
+      "Confusion (more likely in older people or those with kidney problems) - contact a doctor",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Other heartburn medicines unless your doctor agrees",
+      "Alcohol and spicy food, which can make symptoms worse"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "amoxicillin",
+    "name": "Amoxicillin",
+    "class": "Antibiotic",
+    "source": "https://www.nhs.uk/medicines/amoxicillin/",
+    "used_for": "Treats bacterial infections, such as chest, ear, throat, urine and skin infections.",
+    "how_to_take": "Take doses evenly spaced through the day, with or without food. Finish the whole course even if you feel better.",
+    "common_side_effects": [
+      "Feeling sick",
+      "Diarrhoea",
+      "Mild skin rash"
+    ],
+    "serious_warnings": [
+      "Swelling of the face or throat, a widespread rash, or trouble breathing (serious allergic reaction) - get emergency help",
+      "Severe or bloody diarrhoea - contact a doctor",
+      "Yellow skin or eyes"
+    ],
+    "avoid": [
+      "Do not take if you are allergic to penicillin - tell your doctor about any allergy"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "azithromycin",
+    "name": "Azithromycin",
+    "class": "Antibiotic",
+    "source": "https://www.nhs.uk/medicines/azithromycin/",
+    "used_for": "Treats bacterial infections, such as chest, ear, throat and skin infections.",
+    "how_to_take": "Usually taken once a day for a short course (often 3 days). Finish the whole course even if you feel better.",
+    "common_side_effects": [
+      "Feeling sick",
+      "Diarrhoea",
+      "Stomach pain",
+      "Headache"
+    ],
+    "serious_warnings": [
+      "Fast or irregular heartbeat, or fainting - get urgent help",
+      "Severe or bloody diarrhoea - contact a doctor",
+      "Yellow skin or eyes",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Indigestion remedies (antacids) within 2 hours of a dose",
+      "Tell your doctor if you have heart rhythm problems"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "cetirizine",
+    "name": "Cetirizine",
+    "class": "Antihistamine",
+    "source": "https://www.nhs.uk/medicines/cetirizine/",
+    "used_for": "Relieves allergy symptoms such as sneezing, runny nose, itchy watery eyes, and itchy skin rashes or hives.",
+    "how_to_take": "Take once a day, with or without food.",
+    "common_side_effects": [
+      "Feeling sleepy or tired",
+      "Dry mouth",
+      "Headache",
+      "Sore throat"
+    ],
+    "serious_warnings": [
+      "Difficulty passing urine - contact a doctor",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Alcohol, which can make you sleepier",
+      "Driving if you feel sleepy",
+      "Taking another antihistamine at the same time"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "levocetirizine",
+    "name": "Levocetirizine",
+    "class": "Antihistamine",
+    "source": "https://medlineplus.gov/druginfo/meds/a607056.html",
+    "used_for": "Relieves allergy symptoms such as sneezing, runny nose, itchy watery eyes, and hives.",
+    "how_to_take": "Usually taken once a day in the evening, with or without food.",
+    "common_side_effects": [
+      "Feeling sleepy or tired",
+      "Dry mouth",
+      "Sore throat",
+      "Cough"
+    ],
+    "serious_warnings": [
+      "Difficulty passing urine - contact a doctor",
+      "Swelling of the face or throat, or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "Alcohol, which can make you sleepier",
+      "Driving if you feel sleepy",
+      "Taking cetirizine at the same time (they are very similar)"
+    ],
+    "notes": "Link from memory: confirm it opens the levocetirizine page.",
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "aspirin",
+    "name": "Aspirin",
+    "class": "Antiplatelet",
+    "source": "https://www.nhs.uk/medicines/aspirin/",
+    "used_for": "Low-dose aspirin helps prevent blood clots, lowering the risk of heart attack and stroke in people at risk.",
+    "how_to_take": "Take once a day with or just after food. Swallow gastro-resistant tablets whole. Do not stop suddenly without talking to your doctor.",
+    "common_side_effects": [
+      "Indigestion",
+      "Bleeding more easily (nosebleeds, bruising)"
+    ],
+    "serious_warnings": [
+      "Black or bloody poo, vomiting blood, or coughing up blood - get urgent help",
+      "A sudden severe headache - get emergency help",
+      "Wheezing or trouble breathing - get emergency help"
+    ],
+    "avoid": [
+      "NSAID painkillers such as ibuprofen or diclofenac, unless your doctor agrees",
+      "Drinking a lot of alcohol (raises stomach bleeding risk)"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "vitamin_d3",
+    "name": "Vitamin D3 (Colecalciferol)",
+    "class": "Vitamin",
+    "source": "https://www.nhs.uk/medicines/colecalciferol/",
+    "used_for": "Treats and prevents low vitamin D. Vitamin D helps the body absorb calcium for strong bones.",
+    "how_to_take": "Take as your doctor says. High-strength capsules (such as 60,000 IU) are usually taken weekly or less often, not every day. Taking it with a meal can help absorption.",
+    "common_side_effects": [
+      "Usually none at the right dose"
+    ],
+    "serious_warnings": [
+      "Feeling or being sick, constipation, being very thirsty, peeing a lot, or confusion (too much vitamin D) - contact a doctor"
+    ],
+    "avoid": [
+      "Taking more than one vitamin D product at the same time unless your doctor agrees",
+      "Taking more than prescribed"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  },
+  {
+    "key": "calcium",
+    "name": "Calcium (carbonate)",
+    "class": "Mineral supplement",
+    "source": "https://medlineplus.gov/druginfo/meds/a601032.html",
+    "used_for": "Supplement for strong bones or low calcium, often combined with vitamin D.",
+    "how_to_take": "Calcium carbonate is best taken with food. Follow the dose on the pack or from your doctor.",
+    "common_side_effects": [
+      "Constipation",
+      "Wind or bloating",
+      "Upset stomach"
+    ],
+    "serious_warnings": [
+      "Feeling sick, constipation, being very thirsty, peeing a lot, or confusion (too much calcium) - contact a doctor"
+    ],
+    "avoid": [
+      "Thyroid medicine (levothyroxine) within 4 hours",
+      "Iron supplements and some antibiotics at the same time - ask a pharmacist about spacing"
+    ],
+    "notes": null,
+    "no_trusted_source": false,
+    "verified": false
+  }
+]

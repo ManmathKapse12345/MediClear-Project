@@ -1,0 +1,65 @@
+{
+  "_about": "Ground truth for real phone photos. accept = statuses that count as correct. ingredients = drugs.json keys the app should explain. unverified = ingredients on the pack with no database entry (must be flagged, never explained). None of these brands are in brands.json on purpose.",
+  "photos": {
+    "Calcarea-Phosphorica-6X_bottle-01.jpg": {
+      "shows": "SBL homeopathic Calcarea Phosphorica 6X, front label",
+      "accept": ["not_in_db"],
+      "ingredients": [],
+      "unverified": []
+    },
+    "Calcarea-Phosphorica-6X_bottle-02.jpg": {
+      "shows": "Same bottle, front label from another angle",
+      "accept": ["not_in_db"],
+      "ingredients": [],
+      "unverified": []
+    },
+    "Calcarea-Phosphorica-6X_bottle-side.jpg": {
+      "shows": "Same bottle, side with SBL logo and dosage; medicine name not visible",
+      "accept": ["unreadable", "not_in_db"],
+      "ingredients": [],
+      "unverified": []
+    },
+    "Calcarea-Phosphorica-6X_bottle-back.jpg": {
+      "shows": "Same bottle, back label with only price, batch and dates",
+      "accept": ["unreadable"],
+      "ingredients": [],
+      "unverified": []
+    },
+    "Saridon_strip-back.jpg": {
+      "shows": "Saridon strip back: paracetamol 500 mg + caffeine 50 mg",
+      "accept": ["ok"],
+      "ingredients": ["paracetamol"],
+      "unverified": ["caffeine"]
+    },
+    "Saridon_strip-front.jpg": {
+      "shows": "Saridon strip front: brand name only, no ingredients",
+      "accept": ["not_in_db"],
+      "ingredients": [],
+      "unverified": []
+    },
+    "Paracip-500_strip-back.jpg": {
+      "shows": "Paracip-500 strip, torn, rotated and dirty: paracetamol 500 mg",
+      "accept": ["ok"],
+      "ingredients": ["paracetamol"],
+      "unverified": []
+    },
+    "Unlabelled_strip-front.jpg": {
+      "shows": "Blue blister with no printed text",
+      "accept": ["unreadable"],
+      "ingredients": [],
+      "unverified": []
+    },
+    "Sunforce-D3-60K_strip-back.jpg": {
+      "shows": "Sunforce-D3 60K torn foil: cholecalciferol 60,000 IU",
+      "accept": ["ok"],
+      "ingredients": ["vitamin_d3"],
+      "unverified": []
+    },
+    "Sunforce-D3-60K_strip-front.jpg": {
+      "shows": "Sunforce-D3 60K mostly empty strip, only part of the name visible",
+      "accept": ["low_confidence", "not_in_db"],
+      "ingredients": [],
+      "unverified": []
+    }
+  }
+}

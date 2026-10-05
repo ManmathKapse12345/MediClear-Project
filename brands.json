@@ -1,0 +1,232 @@
+{
+  "Alerid 10": {
+    "aliases": ["Alerid", "Alerid-10", "Alerid 10 mg", "Alerid Tablet"],
+    "maker": "Cipla",
+    "form": "tablet",
+    "ingredients": [{"key": "cetirizine", "strength": "10 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Alerid Syrup": {
+    "aliases": ["Alerid-Syrup", "Alerid Syrup", "Cetirizine Syrup"],
+    "maker": "Cipla",
+    "form": "syrup",
+    "ingredients": [{"key": "cetirizine", "strength": "5 mg per 5 ml"}],
+    "rx": true,
+    "source": "pack label",
+    "note": "Often used for children. Doses for children are not covered here - ask your doctor or pharmacist."
+  },
+  "Amlip-5": {
+    "aliases": ["Amlip", "Amlip-5", "Amlip 5", "Amlip 5 mg"],
+    "maker": "Cipla",
+    "form": "tablet",
+    "ingredients": [{"key": "amlodipine", "strength": "5 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Atorva 40": {
+    "aliases": ["Atorva", "Atorva-40", "Atorva 40 mg"],
+    "maker": "Zydus Medica",
+    "form": "tablet",
+    "ingredients": [{"key": "atorvastatin", "strength": "40 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Azipro 500": {
+    "aliases": ["Azipro", "Azipro-500", "Azipro 500 mg"],
+    "maker": "Cipla",
+    "form": "tablet",
+    "ingredients": [{"key": "azithromycin", "strength": "500 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Calizon-D": {
+    "aliases": ["Calizon", "Calizon-D", "Calizon D"],
+    "maker": null,
+    "form": "tablet",
+    "ingredients": [{"key": "calcium", "strength": null}, {"key": "vitamin_d3", "strength": null}],
+    "rx": null,
+    "source": "pack label",
+    "note": null
+  },
+  "Ecosprin 150": {
+    "aliases": ["Ecosprin", "Ecosprin-150", "Ecosprin 150 mg"],
+    "maker": "USV",
+    "form": "gastro-resistant tablet",
+    "ingredients": [{"key": "aspirin", "strength": "150 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Eltroxin 88": {
+    "aliases": ["Eltroxin", "Eltroxin-88", "Eltroxin 88 mcg", "Thyroxine Sodium 88 mcg"],
+    "maker": "GlaxoSmithKline",
+    "form": "tablet",
+    "ingredients": [{"key": "levothyroxine", "strength": "88 mcg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": "The pack says 'thyroxine sodium', which is another name for levothyroxine."
+  },
+  "Famocid 40": {
+    "aliases": ["Famocid", "Famocid-40", "Famocid 40 mg"],
+    "maker": "Sun Pharma",
+    "form": "tablet",
+    "ingredients": [{"key": "famotidine", "strength": "40 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Flexon 650": {
+    "aliases": ["Flexon-650", "Flexon 650 mg"],
+    "maker": "Aristo",
+    "form": "tablet",
+    "ingredients": [{"key": "paracetamol", "strength": "650 mg"}],
+    "rx": null,
+    "source": "pack label",
+    "note": null
+  },
+  "Flexon MR": {
+    "aliases": ["Flexon-MR", "Flexon MR Tablet"],
+    "maker": "Aristo",
+    "form": "tablet",
+    "ingredients": [
+      {"key": "ibuprofen", "strength": "400 mg"},
+      {"key": "paracetamol", "strength": "325 mg"},
+      {"key": "chlorzoxazone", "strength": "250 mg"}
+    ],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Gemcal-D3": {
+    "aliases": ["Gemcal", "Gemcal-D3", "Gemcal D3"],
+    "maker": "Alkem",
+    "form": "tablet",
+    "ingredients": [
+      {"key": "calcium", "strength": "1.25 g calcium carbonate (500 mg calcium)"},
+      {"key": "vitamin_d3", "strength": "500 IU"}
+    ],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Gemer 4": {
+    "aliases": ["Gemer", "Gemer-4", "Gemer 4 mg"],
+    "maker": "Sun Pharma",
+    "form": "prolonged-release tablet",
+    "ingredients": [
+      {"key": "metformin", "strength": "500 mg (prolonged release)"},
+      {"key": "glimepiride", "strength": "4 mg"}
+    ],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Glycomet 1gm": {
+    "aliases": ["Glycomet", "Glycomet-1gm", "Glycomet 1 gm", "Glycomet-1 GM", "Glycomet SR 1000", "Glycomet 1000"],
+    "maker": "USV",
+    "form": "sustained-release tablet",
+    "ingredients": [{"key": "metformin", "strength": "1000 mg (sustained release)"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Levocetrizen-5": {
+    "aliases": ["Levocetrizen", "Levocetrizen-5", "Levocetrizen 5 mg"],
+    "maker": "Leeford",
+    "form": "tablet",
+    "ingredients": [{"key": "levocetirizine", "strength": "5 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Mox 500": {
+    "aliases": ["Mox", "Mox-500", "Mox 500 mg", "Mox Capsules"],
+    "maker": "Sun Pharma",
+    "form": "capsule",
+    "ingredients": [{"key": "amoxicillin", "strength": "500 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Omez-D": {
+    "aliases": ["Omez-D", "Omez D", "Omez-D SR", "Omez D SR", "Omez DSR"],
+    "maker": "Dr. Reddy's",
+    "form": "capsule",
+    "ingredients": [
+      {"key": "omeprazole", "strength": "20 mg (delayed release)"},
+      {"key": "domperidone", "strength": "30 mg (sustained release)"}
+    ],
+    "rx": true,
+    "source": "pack label",
+    "note": "The pack name is 'OMEZ-D SR'. Do not confuse it with Omez-D+ SR, which contains esomeprazole."
+  },
+  "Omez-D Plus SR": {
+    "aliases": ["Omez-D-Plus-SR", "Omez-D+ SR", "Omez-D+SR", "Omez D+ SR", "Omez DSR Plus", "Omez-D Plus"],
+    "maker": "Dr. Reddy's",
+    "form": "capsule",
+    "ingredients": [
+      {"key": "esomeprazole", "strength": "40 mg"},
+      {"key": "domperidone", "strength": "30 mg (sustained release)"}
+    ],
+    "rx": true,
+    "source": "pack label",
+    "note": "Contains esomeprazole, not omeprazole. Do not confuse it with Omez-D SR."
+  },
+  "Pantocid 20": {
+    "aliases": ["Pantocid", "Pantocid-20", "Pantocid 20 mg"],
+    "maker": "Sun Pharma",
+    "form": "gastro-resistant tablet",
+    "ingredients": [{"key": "pantoprazole", "strength": "20 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Rosuvas 10": {
+    "aliases": ["Rosuvas", "Rosuvas-10", "Rosuvas 10 mg"],
+    "maker": "Sun Pharma",
+    "form": "tablet",
+    "ingredients": [{"key": "rosuvastatin", "strength": "10 mg"}],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Telma-AM": {
+    "aliases": ["Telma-AM", "Telma AM", "Telma AM 40/5"],
+    "maker": "Glenmark",
+    "form": "tablet",
+    "ingredients": [
+      {"key": "telmisartan", "strength": "40 mg"},
+      {"key": "amlodipine", "strength": "5 mg"}
+    ],
+    "rx": true,
+    "source": "pack label",
+    "note": null
+  },
+  "Uprise-D3 60K": {
+    "aliases": ["Uprise", "Uprise-D3", "Uprise D3", "Uprise-D3-60K", "Uprise D3 60K"],
+    "maker": "Alkem",
+    "form": "soft gelatin capsule",
+    "ingredients": [{"key": "vitamin_d3", "strength": "60,000 IU (1500 mcg)"}],
+    "rx": true,
+    "source": "pack label",
+    "note": "High-strength vitamin D. Take only as your doctor says."
+  },
+  "Zeldinac-SP": {
+    "aliases": ["Zeldinac", "Zeldinac-SP", "Zeldinac SP"],
+    "maker": null,
+    "form": "tablet",
+    "ingredients": [
+      {"key": "diclofenac", "strength": null},
+      {"key": "paracetamol", "strength": null},
+      {"key": "serratiopeptidase", "strength": null}
+    ],
+    "rx": null,
+    "source": "pack label",
+    "note": null
+  }
+}
