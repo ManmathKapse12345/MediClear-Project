@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent
+REPO = ROOT.parent
 load = lambda name: json.loads((ROOT / name).read_text(encoding="utf-8"))
 
 drugs = load("drugs.json")
@@ -48,7 +49,7 @@ for name, b in brands.items():
         if other != name:
             errors.append(f"brands.json: alias '{a}' used by both {other} and {name}")
 
-photos = sorted((ROOT / "test_photos").rglob("*.jpg"))
+photos = sorted((REPO / "test_photos").rglob("*.jpg"))
 matched = 0
 for p in photos:
     prefix = p.stem.split("_")[0]
@@ -57,7 +58,7 @@ for p in photos:
     else:
         errors.append(f"test_photos: {p.name} prefix '{prefix}' matches no brand alias")
 
-own_dir = ROOT / "test_photos_own"
+own_dir = REPO / "test_photos_own"
 own = json.loads((own_dir / "expected.json").read_text(encoding="utf-8"))["photos"]
 statuses = {"ok", "unreadable", "low_confidence", "not_in_db", "error"}
 for fname, exp in own.items():
