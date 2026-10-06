@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -47,3 +48,17 @@ class InteractionAlert(BaseModel):
 class InteractionCheckResponse(BaseModel):
     alerts: list[InteractionAlert]
     disclaimer: str = DISCLAIMER
+
+
+class SavedMedicineOut(BaseModel):
+    id: int
+    label: str
+    ingredients: list[str]
+    created_at: datetime
+
+
+class MedicineListResponse(BaseModel):
+    medicines: list[SavedMedicineOut]
+    alerts: list[InteractionAlert]
+    disclaimer: str = DISCLAIMER
+

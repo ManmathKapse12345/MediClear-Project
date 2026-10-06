@@ -1,4 +1,3 @@
-from app.store import init_db
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -7,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.kb import get_kb
 from app.routers import identify, medicines
+from app.store import init_db
 
 
 @asynccontextmanager

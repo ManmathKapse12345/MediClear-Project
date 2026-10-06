@@ -11,7 +11,7 @@ INGREDIENT_THRESHOLD = 90  # stricter: a wrong ingredient is worse than none
 # Words printed after the ingredient name, e.g. "Metformin Hydrochloride IP"
 SALT_WORDS = {"sodium", "potassium", "calcium", "magnesium", "hydrochloride", "hcl", "besylate",
               "besilate", "dihydrate", "trihydrate", "monohydrate", "ip", "bp", "usp"}
-STRENGTH = re.compile(r"\b\d[\d,.]*\s*(?:mg|mcg|g|iu|ml)?\b", re.I)  # \b keeps the 3 in "D3"
+STRENGTH = re.compile(r"\b\d[\d,.]*\s*(?:mg|mcg|g|iu|ml)?\b", re.IGNORECASE)  # \b keeps the 3 in "D3"
 
 
 @dataclass
