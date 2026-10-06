@@ -1,3 +1,4 @@
+from app.store import init_db
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -24,3 +25,8 @@ app.include_router(medicines.router)
 def health():
     kb = get_kb()
     return {"status": "ok", "drugs": len(kb.drugs), "brands": len(kb.brands)}
+
+async def lifespan(app: FastAPI):
+    get_kb()     # fail fast at startup if the data files are broken
+    init_db()    # create tables if they don't exist
+    yield
