@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     db_path: Path = REPO_ROOT / "backend" / "mediclear.db"
     gemini_api_key: str = ""
     gemini_model: str = "gemini-3.8-flash"
+    gemini_timeout_s: int = 30
+    gemini_fallback_model: str = "gemini-3.1-flash-lite"
     cors_origins: list[str] = ["http://localhost:5173"]
 
 
