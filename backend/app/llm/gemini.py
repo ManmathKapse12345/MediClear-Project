@@ -46,18 +46,26 @@ class LLMError(Exception):
 
 
 class GeminiClient:
+    # def __init__(self, api_key: str, model: str, timeout_s: int = 30, fallback_model: str | None = None):
+    #     if not api_key:
+    #         raise LLMError("GEMINI_API_KEY is not set")
+    #     self.model = model
+    #     self.client = genai.Client(api_key=api_key, http_options=types.HttpOptions(
+    #         timeout=timeout_s * 1000,  # milliseconds
+    #         retry_options=types.HttpRetryOptions(attempts=3, initial_delay=1.0),  # retries 408/429/5xx with backoff
+    #     ))
+    #     self.models = [model] + ([fallback_model] if fallback_model else [])
     def __init__(self, api_key: str, model: str, timeout_s: int = 30, fallback_model: str | None = None):
-        if not api_key:
-            raise LLMError("GEMINI_API_KEY is not set")
-        self.model = model
+        self.models = [model] + ([fallback_model] if fallback_model else [])
         self.client = genai.Client(api_key=api_key, http_options=types.HttpOptions(
             timeout=timeout_s * 1000,  # milliseconds
             retry_options=types.HttpRetryOptions(attempts=3, initial_delay=1.0),  # retries 408/429/5xx with backoff
-        ))
-        self.models = [model] + ([fallback_model] if fallback_model else [])
+        )) if api_key else None
+
 
     def _generate(self, contents, schema: type[BaseModel]):
-        # config = ...  # unchanged
+        if self.client is None:
+            raise LLMError("GEMINI_API_KEY is not set")
         config = types.GenerateContentConfig(
             response_mime_type="application/json", response_schema=schema, temperature=0,
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True))

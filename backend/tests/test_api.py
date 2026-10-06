@@ -17,3 +17,10 @@ def test_identify_text_known_brand():
 def test_interactions_rejects_unknown_keys():
     r = client.post("/api/interactions/check", json={"medicines": [{"label": "X", "ingredients": ["madeup"]}]})
     assert r.status_code == 422
+
+def test_startup_creates_tables():
+    from sqlmodel import inspect
+
+    from app.store import engine
+    with TestClient(app):  # "with" runs the lifespan (startup), like the real server
+        assert {"savedmedicine", "explanationcache"} <= set(inspect(engine).get_table_names())

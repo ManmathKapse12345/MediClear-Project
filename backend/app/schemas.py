@@ -62,3 +62,21 @@ class MedicineListResponse(BaseModel):
     alerts: list[InteractionAlert]
     disclaimer: str = DISCLAIMER
 
+Lang = Literal["en", "hi", "mr"]
+
+
+class Explanation(BaseModel):
+    drug_key: str
+    name: str
+    lang: Lang
+    available: bool = True       # False when no trusted source exists
+    message: str | None = None   # the fixed text shown when not available
+    used_for: str = ""
+    how_it_works: str = ""
+    how_to_take: str = ""
+    avoid: list[str] = []
+    side_effects: list[str] = []
+    see_doctor_if: list[str] = []
+    sources: list[str] = []
+    generated_by: Literal["database", "llm", "none"]
+    disclaimer: str = DISCLAIMER

@@ -11,8 +11,10 @@ from app.llm.gemini import GeminiClient, Label, LLMError
 
 
 def test_missing_api_key_fails_clearly():
+    client = GeminiClient(api_key="", model="m")  # creating it is fine...
     with pytest.raises(LLMError, match="GEMINI_API_KEY"):
-        GeminiClient(api_key="", model="m")
+        client.classify_question("hi", None)       # ...using it is not
+
 
 
 def test_labels_match_redteam_file():
