@@ -16,11 +16,12 @@ STRENGTH = re.compile(r"\b\d[\d,.]*\s*(?:mg|mcg|g|iu|ml)?\b", re.IGNORECASE)  # 
 
 @dataclass
 class MatchResult:
-    status: str  # ok | not_in_db | unreadable  (low_confidence comes with vision on Day 2)
+    status: str  # ok | not_in_db | unreadable | low_confidence
     brand: str | None = None
     ingredients: list[str] = field(default_factory=list)  # drugs.json keys to explain
     unverified: list[str] = field(default_factory=list)   # on the pack, not in our DB
     score: float = 0.0
+    reasons: list[str] = field(default_factory=list)      # why low_confidence, for the user and the eval
 
 
 def match_brand(kb: KnowledgeBase, text: str) -> tuple[str | None, float]:

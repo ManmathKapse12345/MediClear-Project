@@ -25,6 +25,7 @@ class IdentifyResponse(BaseModel):
     ingredients: list[IngredientInfo] = []
     unverified: list[str] = []
     disclaimer: str = DISCLAIMER
+    reasons: list[str] = []
 
 
 class MedIn(BaseModel):
