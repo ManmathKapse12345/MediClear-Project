@@ -5,3 +5,7 @@ rapidfuzz
 python-multipart
 pytest
 httpx
+google-genai
+gTTS
+sqlmodel
+ruff

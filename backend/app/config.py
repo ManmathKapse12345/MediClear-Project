@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     data_dir: Path = REPO_ROOT / "data"
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-3.8-flash"
     cors_origins: list[str] = ["http://localhost:5173"]
 
 
