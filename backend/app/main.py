@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.kb import get_kb
-from app.routers import explain, identify, medicines
+from app.routers import ask, audio, explain, identify, medicines
 from app.store import init_db
 
 
@@ -21,6 +21,12 @@ app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins, allow_me
 app.include_router(explain.router)
 app.include_router(identify.router)
 app.include_router(medicines.router)
+app.include_router(ask.router)
+app.include_router(explain.router)
+app.include_router(identify.router)
+app.include_router(medicines.router)
+app.include_router(ask.router)
+app.include_router(audio.router)
 
 
 @app.get("/api/health")

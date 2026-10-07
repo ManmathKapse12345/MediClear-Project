@@ -23,4 +23,4 @@ def test_startup_creates_tables():
 
     from app.store import engine
     with TestClient(app):  # "with" runs the lifespan (startup), like the real server
-        assert {"savedmedicine", "explanationcache"} <= set(inspect(engine).get_table_names())
+        assert {"savedmedicine", "explanationcache", "audiocache"} <= set(inspect(engine).get_table_names())

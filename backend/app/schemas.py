@@ -3,6 +3,8 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from app.llm.gemini import Label
+
 DISCLAIMER = ("MediClear explains medicines. It does not replace your doctor or pharmacist. "
               "Always follow their instructions. Do not start, stop or change a medicine without asking them.")
 
@@ -81,3 +83,17 @@ class Explanation(BaseModel):
     sources: list[str] = []
     generated_by: Literal["database", "llm", "none"]
     disclaimer: str = DISCLAIMER
+
+
+class AskRequest(BaseModel):
+    question: str = Field(min_length=1, max_length=500)
+    drug_key: str | None = None
+    lang: Lang = "en"
+
+
+class AskResponse(BaseModel):
+    label: Label
+    message: str | None = None               # fixed text for every label except answer_from_db
+    explanation: Explanation | None = None   # only for answer_from_db
+    disclaimer: str = DISCLAIMER
+

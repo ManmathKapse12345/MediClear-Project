@@ -35,3 +35,8 @@ def init_db() -> None:
 def get_session():
     with Session(engine) as session:
         yield session
+
+
+class AudioCache(SQLModel, table=True):
+    text_hash: str = Field(primary_key=True)  # sha256 of lang + the exact text spoken
+    mp3: bytes
