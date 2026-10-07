@@ -10,7 +10,7 @@ BRAND_THRESHOLD = 85       # fuzzy score (0-100) needed to accept a brand
 INGREDIENT_THRESHOLD = 90  # stricter: a wrong ingredient is worse than none
 # Words printed after the ingredient name, e.g. "Metformin Hydrochloride IP"
 SALT_WORDS = {"sodium", "potassium", "calcium", "magnesium", "hydrochloride", "hcl", "besylate",
-              "besilate", "dihydrate", "trihydrate", "monohydrate", "ip", "bp", "usp"}
+              "besilate", "dihydrate", "trihydrate", "monohydrate", "anhydrous", "ip", "bp", "usp"}
 STRENGTH = re.compile(r"\b\d[\d,.]*\s*(?:mg|mcg|g|iu|ml)?\b", re.IGNORECASE)  # \b keeps the 3 in "D3"
 
 
@@ -38,8 +38,8 @@ def match_brand(kb: KnowledgeBase, text: str) -> tuple[str | None, float]:
 
 def clean_ingredient(name: str) -> str:
     words = STRENGTH.sub(" ", name).lower().split()
-    while len(words) > 1 and words[-1].strip(".,") in SALT_WORDS:
-        words.pop()  # "Atorvastatin Calcium IP" -> "atorvastatin"
+    while len(words) > 1 and words[-1].strip(".,()") in SALT_WORDS:
+        words.pop()  # "Atorvastatin Calcium IP" -> "atorvastatin", "Caffeine (Anhydrous)" -> "caffeine"
     return norm(" ".join(words))
 
 

@@ -12,10 +12,19 @@ sys.path.insert(0, str(ROOT / "backend"))  # so "import app" works
 
 from app.kb import get_kb
 from app.llm.gemini import LLMError, get_llm
+from app.matcher import clean_ingredient
 from app.pipeline import identify_photo
 
 PHOTOS = ROOT / "test_photos_own"
 MIME = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp"}
+
+
+
+def same_names(got: list[str], want: list[str]) -> bool:
+    """Cleaned like the app does, and contained, so "Calcarea Phosphorica 6X" counts as "calcarea phosphorica"."""
+    got_clean = [clean_ingredient(g) for g in got]
+    return len(got) == len(want) and all(any(clean_ingredient(w) in g for g in got_clean) for w in want)
+
 
 sys.stdout.reconfigure(encoding="utf-8")  # ✓/✗ crash older Windows consoles otherwise
 kb, llm = get_kb(), get_llm()
@@ -26,18 +35,18 @@ for name, exp in expected.items():
     path = PHOTOS / name
     try:
         r = identify_photo(kb, llm, path.read_bytes(), MIME[path.suffix.lower()])
-        status, ingredients, unverified, reasons = r.status, set(r.ingredients), {u.lower() for u in r.unverified}, r.reasons
+        status, ingredients, unverified, reasons = r.status, set(r.ingredients), r.unverified, r.reasons
     except LLMError as e:
         errors += 1
-        status, ingredients, unverified, reasons = "error", set(), set(), [str(e)[:70]]
+        status, ingredients, unverified, reasons = "error", set(), [], [str(e)[:70]]
 
     problems = []
     if status not in exp["accept"]:
         problems.append(f"status {status}, expected {'/'.join(exp['accept'])}")
     if ingredients != set(exp["ingredients"]):
         problems.append(f"ingredients {sorted(ingredients)}, expected {exp['ingredients']}")
-    if unverified != {u.lower() for u in exp["unverified"]}:
-        problems.append(f"unverified {sorted(unverified)}, expected {exp['unverified']}")
+    if not same_names(unverified, exp["unverified"]):
+        problems.append(f"unverified {unverified}, expected {exp['unverified']}")
     # the worst failure: confidently explaining the wrong medicine
     if status == "ok" and ingredients != set(exp["ingredients"]):
         wrong_ok += 1

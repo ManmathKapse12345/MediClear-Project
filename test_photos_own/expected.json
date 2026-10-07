@@ -5,13 +5,13 @@
       "shows": "SBL homeopathic Calcarea Phosphorica 6X, front label",
       "accept": ["not_in_db"],
       "ingredients": [],
-      "unverified": []
+      "unverified": ["calcarea phosphorica"]
     },
     "Calcarea-Phosphorica-6X_bottle-02.jpg": {
       "shows": "Same bottle, front label from another angle",
       "accept": ["not_in_db"],
       "ingredients": [],
-      "unverified": []
+      "unverified": ["calcarea phosphorica"]
     },
     "Calcarea-Phosphorica-6X_bottle-side.jpg": {
       "shows": "Same bottle, side with SBL logo and dosage; medicine name not visible",
