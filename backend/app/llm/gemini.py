@@ -74,11 +74,14 @@ class GeminiClient:
             try:
                 resp = self.client.models.generate_content(model=model, contents=contents, config=config)
                 break
-            except errors.ServerError as e:
-                if i == len(self.models) - 1:
+            except errors.APIError as e:
+                # 5xx = model busy; 429 = this model's quota is used up. Both: try the next model.
+                retryable = isinstance(e, errors.ServerError) or e.code == 429
+                if not retryable or i == len(self.models) - 1:
                     raise LLMError(f"Gemini request failed: {e}") from e
-            except (errors.APIError, httpx.HTTPError) as e:
+            except httpx.HTTPError as e:
                 raise LLMError(f"Gemini request failed: {e}") from e
+
         if resp.parsed is None:
             raise LLMError("Gemini returned no valid JSON")
         return resp.parsed

@@ -67,3 +67,33 @@ def test_server_error_falls_back_to_second_model(monkeypatch):
     monkeypatch.setattr(client.client.models, "generate_content", fake)
     assert client._generate("hi", None) == "ok"
     assert tried == ["main", "backup"]
+
+
+def test_quota_error_falls_back_to_second_model(monkeypatch):
+    client = GeminiClient(api_key="test", model="main", fallback_model="backup")
+    tried = []
+
+    class Resp:
+        parsed = "ok"
+
+    def fake(model, contents, config):
+        tried.append(model)
+        if model == "main":  # free-tier quota is per model, so the backup still has requests left
+            raise errors.ClientError(429, {"error": {"code": 429, "message": "quota", "status": "RESOURCE_EXHAUSTED"}})
+        return Resp()
+    monkeypatch.setattr(client.client.models, "generate_content", fake)
+    assert client._generate("hi", None) == "ok"
+    assert tried == ["main", "backup"]
+
+
+def test_other_client_errors_do_not_fall_back(monkeypatch):
+    client = GeminiClient(api_key="test", model="main", fallback_model="backup")
+    tried = []
+
+    def fake(model, contents, config):
+        tried.append(model)
+        raise errors.ClientError(400, {"error": {"code": 400, "message": "bad", "status": "INVALID_ARGUMENT"}})
+    monkeypatch.setattr(client.client.models, "generate_content", fake)
+    with pytest.raises(LLMError):
+        client._generate("hi", None)
+    assert tried == ["main"]  # a bad request would fail on the backup too
