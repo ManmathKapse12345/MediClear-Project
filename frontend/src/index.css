@@ -109,3 +109,46 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* ---- Scan screen ---- */
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.or {
+  text-align: center;
+  color: var(--muted);
+  margin: 16px 0;
+}
+
+.photo-button {
+  width: 100%;
+}
+
+.ingredients {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ingredients li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.wide {
+  width: 100%;
+}

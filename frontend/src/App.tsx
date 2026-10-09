@@ -1,43 +1,82 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import { api, getDeviceId } from "./api";
-import type { Health } from "./types";
+import { useState } from "react"
+import { LANGS, getStrings } from './i18n'
+import ScanScreen from './screens/ScanScreen.tsx'
+import "./App.css"
+import type { Lang } from "./types"
+
+type Tab = 'scan' | 'explain' | 'ask' | 'mine'
+
+const LANG_KEY = 'mediclear-lang'
+
+function loadLang(): Lang {
+  const saved = localStorage.getItem(LANG_KEY)
+  return saved === 'hi' || saved === 'mr' ? saved : 'en'
+}
 
 function App() {
-  const [health, setHealth] = useState<Health | null>(null);
-  const [savedCount, setSavedCount] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [lang, setLang] = useState<Lang>(loadLang)
+  const [tab, setTab] = useState<Tab>('scan')
+  const [drugKey, setDrugKey] = useState<string | null>(null) // medicine chosen for "About it"
+  const s = getStrings(lang)
 
-  useEffect(() => {
-    api
-      .health()
-      .then(setHealth)
-      .catch((err: Error) => setError(err.message));
+  function changeLang(next: Lang) {
+    setLang(next)
+    localStorage.setItem(LANG_KEY, next)
+  }
 
-    // Tests that the X-Device-Id header is accepted
-    api
-      .listMedicines()
-      .then((data) => setSavedCount(data.medicines.length))
-      .catch((err: Error) => setError(err.message));
-  }, []);
+  function openExplain(key: string) {
+    setDrugKey(key)
+    setTab('explain')
+  }
 
-  return (
-    <main>
-      <h1>MediClear</h1>
-      {error && <p>❌ {error}</p>}
-      {!error && !health && <p>Checking connection…</p>}
-      {health && (
-        <p>
-          ✅ Backend is {health.status}: {health.drugs} medicines,{" "}
-          {health.brands} brands loaded.
-        </p>
-      )}
-      {savedCount !== null && (
-        <p>Saved medicines on this device: {savedCount}</p>
-      )}
-      <p>Device ID: {getDeviceId()}</p>
-    </main>
-  );
+  const tabs: { id: Tab; label: string }[] = [
+    { id: 'scan', label: s.tabScan },
+    { id: 'explain', label: s.tabExplain },
+    { id: 'ask', label: s.tabAsk },
+    { id: 'mine', label: s.tabMine },
+  ]
+
+
+    return (
+    <div className="app" lang={lang}>
+      <header className="topbar">
+        <h1>MediClear</h1>
+        <div className="lang-picker" role="group" aria-label={s.language}>
+          {LANGS.map((l) => (
+            <button
+              key={l.code}
+              className={l.code === lang ? 'active' : ''}
+              aria-pressed={l.code === lang}
+              onClick={() => changeLang(l.code)}
+            >
+              {l.label}
+            </button>
+          ))}
+        </div>
+      </header>
+
+      <nav className="tabs">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            aria-current={tab === t.id ? 'page' : undefined}
+            onClick={() => setTab(t.id)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </nav>
+
+      <main className="content">
+        {tab === 'scan' && <ScanScreen lang={lang} onExplain={openExplain} />}
+        {tab === 'explain' && <p>{s.comingSoon} ({drugKey ?? '-'})</p>}
+        {tab === 'ask' && <p>{s.comingSoon}</p>}
+        {tab === 'mine' && <p>{s.comingSoon}</p>}
+      </main>
+
+      <footer className="disclaimer">{s.disclaimer}</footer>
+    </div>
+  )
 }
 
 export default App;

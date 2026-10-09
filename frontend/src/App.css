@@ -1,0 +1,194 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #444444;
+  --border: #888888;
+  --card: #f4f6f8;
+  --primary: #0b5cad;
+  --primary-text: #ffffff;
+  --danger: #b00020;
+  --danger-bg: #fdecee;
+  --warn: #8a5a00;
+  --warn-bg: #fff4d6;
+  --focus: #ffbf00;
+
+  color-scheme: light;
+  font-family: system-ui, 'Segoe UI', 'Nirmala UI', 'Noto Sans Devanagari', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+/* ---- Layout ---- */
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 2px solid var(--border);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.lang-picker {
+  display: flex;
+  gap: 8px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 12px 16px;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+}
+
+.disclaimer {
+  padding: 16px;
+  border-top: 2px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---- Buttons ---- */
+
+button,
+.button {
+  font: inherit;
+  min-height: 56px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  background: var(--bg);
+  color: var(--primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button.active,
+button.primary,
+.button.primary,
+.tabs button[aria-current='page'] {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lang-picker button {
+  min-height: 48px;
+  padding: 8px 14px;
+}
+
+.tabs button {
+  min-height: 64px;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+
+/* A thick yellow ring so keyboard users can see where they are */
+button:focus-visible,
+input:focus-visible,
+.button:focus-within {
+  outline: 4px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---- Forms ---- */
+
+h2 {
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+input[type='text'] {
+  font: inherit;
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+}
+
+/* Hidden from view but still usable (e.g. the real file input) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- Messages and cards ---- */
+
+.message {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid var(--warn);
+  background: var(--warn-bg);
+}
+
+.message.error {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.card {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  background: var(--card);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
