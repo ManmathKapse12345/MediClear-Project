@@ -152,3 +152,52 @@ code {
 .wide {
   width: 100%;
 }
+
+/* ---- Explain screen ---- */
+
+.listen {
+  margin-bottom: 16px;
+}
+
+.listen p {
+  margin: 0 0 8px;
+}
+
+audio {
+  width: 100%;
+  height: 56px;
+}
+
+.card.warn {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.card.warn h3 {
+  color: var(--danger);
+}
+
+.points {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.points li + li {
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.sources ul {
+  padding-left: 1.2em;
+  word-break: break-all; /* long URLs must not push the page sideways */
+}
+
+a {
+  color: var(--primary);
+}
