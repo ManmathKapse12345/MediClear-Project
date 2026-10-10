@@ -201,3 +201,73 @@ audio {
 a {
   color: var(--primary);
 }
+
+/* ---- Ask screen ---- */
+
+textarea {
+  font: inherit;
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  resize: vertical;
+}
+
+textarea:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+.answer {
+  margin-top: 24px;
+}
+
+/* ---- Emergency banner ---- */
+
+.emergency {
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--danger);
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.emergency p {
+  margin: 0 0 16px;
+}
+
+.call-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--danger);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.call-button:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+}

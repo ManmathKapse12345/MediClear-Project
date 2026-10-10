@@ -1,8 +1,9 @@
+import AskScreen from "./screens/AskScreen.tsx";
+import type { Drug, Lang } from "./types";
 import { useState } from "react";
 import { LANGS, getStrings } from "./i18n";
 import ScanScreen from "./screens/ScanScreen.tsx";
 import "./App.css";
-import type { Lang } from "./types";
 import ExplainScreen from "./screens/ExplainScreen.tsx";
 
 type Tab = "scan" | "explain" | "ask" | "mine";
@@ -17,7 +18,7 @@ function loadLang(): Lang {
 function App() {
   const [lang, setLang] = useState<Lang>(loadLang);
   const [tab, setTab] = useState<Tab>("scan");
-  const [drugKey, setDrugKey] = useState<string | null>(null); // medicine chosen for "About it"
+  const [drug, setDrug] = useState<Drug | null>(null); // medicine chosen with "Explain"
   const s = getStrings(lang);
 
   function changeLang(next: Lang) {
@@ -25,8 +26,8 @@ function App() {
     localStorage.setItem(LANG_KEY, next);
   }
 
-  function openExplain(key: string) {
-    setDrugKey(key);
+  function openExplain(key: string, name: string) {
+    setDrug({ key, name });
     setTab("explain");
   }
 
@@ -71,13 +72,13 @@ function App() {
         {tab === "scan" && <ScanScreen lang={lang} onExplain={openExplain} />}
         {tab === "explain" && (
           <ExplainScreen
-            key={`${drugKey}-${lang}`}
+            key={`${drug?.key}-${lang}`}
             lang={lang}
-            drugKey={drugKey}
+            drugKey={drug?.key ?? null}
             onFindMedicine={() => setTab("scan")}
           />
         )}
-        {tab === "ask" && <p>{s.comingSoon}</p>}
+        {tab === "ask" && <AskScreen lang={lang} drug={drug} />}
         {tab === "mine" && <p>{s.comingSoon}</p>}
       </main>
 

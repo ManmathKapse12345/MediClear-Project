@@ -92,3 +92,9 @@ export type MedicineListResponse = {
   alerts: InteractionAlert[]
   disclaimer: string
 }
+
+// Frontend only: the medicine the user is currently looking at
+export type Drug = {
+  key: string
+  name: string
+}

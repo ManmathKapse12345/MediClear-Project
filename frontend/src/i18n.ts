@@ -55,6 +55,13 @@ const en = {
   sideEffects: "Common side effects",
   seeDoctorIf: "See a doctor if",
   sources: "Sources",
+    // Ask screen
+  askTitle: 'Ask a question about your medicine',
+  questionLabel: 'Type your question',
+  questionPlaceholder: 'For example: Is it OK to take this with food?',
+  askAbout: 'My question is about:',
+  askButton: 'Ask',
+  call112: '📞 Call 112',
 };
 
 // Every language must have exactly the same keys as English.
@@ -107,6 +114,12 @@ const hi: Strings = {
   sideEffects: "आम दुष्प्रभाव",
   seeDoctorIf: "डॉक्टर को दिखाएँ अगर",
   sources: "स्रोत",
+  askTitle: 'अपनी दवा के बारे में सवाल पूछें',
+  questionLabel: 'अपना सवाल लिखें',
+  questionPlaceholder: 'जैसे: क्या इसे खाने के साथ लेना ठीक है?',
+  askAbout: 'सवाल इस दवा के बारे में है:',
+  askButton: 'पूछें',
+  call112: '📞 112 पर कॉल करें',
 };
 
 const mr: Strings = {
@@ -155,6 +168,12 @@ const mr: Strings = {
   sideEffects: "सामान्य दुष्परिणाम",
   seeDoctorIf: "असे झाल्यास डॉक्टरांना दाखवा",
   sources: "स्रोत",
+  askTitle: 'तुमच्या औषधाबद्दल प्रश्न विचारा',
+  questionLabel: 'तुमचा प्रश्न लिहा',
+  questionPlaceholder: 'उदा: हे जेवणासोबत घेणे ठीक आहे का?',
+  askAbout: 'प्रश्न या औषधाबद्दल आहे:',
+  askButton: 'विचारा',
+  call112: '📞 112 वर कॉल करा',
 };
 
 const ALL: Record<Lang, Strings> = { en, hi, mr };

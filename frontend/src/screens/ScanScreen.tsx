@@ -6,7 +6,7 @@ import type { IdentifyResponse, Lang } from '../types'
 
 type Props = {
   lang: Lang
-  onExplain: (drugKey: string) => void
+  onExplain: (drugKey: string, name: string) => void
 }
 
 export default function ScanScreen({ lang, onExplain }: Props) {
@@ -115,7 +115,7 @@ export default function ScanScreen({ lang, onExplain }: Props) {
                   <strong>{ing.name}</strong>
                   {ing.strength && ` ${ing.strength}`}
                 </span>
-                <button onClick={() => onExplain(ing.key)}>{s.explain}</button>
+                <button onClick={() => onExplain(ing.key, ing.name)}>{s.explain}</button>
               </li>
             ))}
           </ul>
