@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
 from app.kb import get_kb
@@ -22,10 +23,6 @@ app.include_router(explain.router)
 app.include_router(identify.router)
 app.include_router(medicines.router)
 app.include_router(ask.router)
-app.include_router(explain.router)
-app.include_router(identify.router)
-app.include_router(medicines.router)
-app.include_router(ask.router)
 app.include_router(audio.router)
 
 
@@ -33,3 +30,9 @@ app.include_router(audio.router)
 def health():
     kb = get_kb()
     return {"status": "ok", "drugs": len(kb.drugs), "brands": len(kb.brands)}
+
+
+# Serve the built React app (frontend/dist) at "/". Must stay LAST:
+# routes are matched in order, so every /api/... route above wins first.
+if settings.frontend_dist.is_dir():
+    app.mount("/", StaticFiles(directory=settings.frontend_dist, html=True), name="frontend")

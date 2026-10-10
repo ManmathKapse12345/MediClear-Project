@@ -10,6 +10,7 @@ class Settings(BaseSettings):
 
     data_dir: Path = REPO_ROOT / "data"
     db_path: Path = REPO_ROOT / "backend" / "mediclear.db"
+    frontend_dist: Path = REPO_ROOT / "frontend" / "dist"
     gemini_api_key: str = ""
     gemini_model: str = "gemini-3.8-flash"
     gemini_timeout_s: int = 30

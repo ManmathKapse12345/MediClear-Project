@@ -1,0 +1,25 @@
+# Secrets: never put these inside an image
+.env
+.env.*
+
+# Git and tooling
+.git
+.github
+.claude
+
+# Installed or generated locally; the image builds its own
+**/node_modules
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+frontend/dist
+
+# Local data and test material the server doesn't need
+**/*.db
+test_photos
+test_photos_own
+eval
+eval_results
+audio_cache
+backend/tests
