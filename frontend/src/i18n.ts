@@ -1,4 +1,5 @@
 import type { AlertLevel, IdentifyStatus, Lang } from './types'
+import { ApiError } from './api'
 
 export const LANGS: { code: Lang; label: string }[] = [
   { code: "en", label: "English" },
@@ -83,6 +84,10 @@ const en = {
     caution: 'Tell your doctor or pharmacist that you take both.',
     timing: 'These can be taken, but not at the same time.',
   } as Record<AlertLevel, string>,
+    // Errors
+  offline: 'No internet connection. Please check it and try again.',
+  photoTooBig: 'This photo is too large. Please take a new photo.',
+  photoType: 'Please use a photo (JPG or PNG).',
 };
 
 // Every language must have exactly the same keys as English.
@@ -161,6 +166,9 @@ const hi: Strings = {
     caution: 'अपने डॉक्टर या फ़ार्मासिस्ट को बताएँ कि आप दोनों दवाएँ लेते हैं।',
     timing: 'इन्हें ले सकते हैं, लेकिन एक ही समय पर नहीं।',
   },
+  offline: 'इंटरनेट कनेक्शन नहीं है। कृपया जाँचकर फिर कोशिश करें।',
+  photoTooBig: 'यह फ़ोटो बहुत बड़ी है। कृपया नई फ़ोटो लें।',
+  photoType: 'कृपया फ़ोटो (JPG या PNG) चुनें।',
 };
 
 const mr: Strings = {
@@ -235,10 +243,23 @@ const mr: Strings = {
     caution: 'तुम्ही दोन्ही औषधे घेता हे तुमच्या डॉक्टर किंवा फार्मासिस्टला सांगा.',
     timing: 'ही औषधे घेता येतात, पण एकाच वेळी नाही.',
   },
+  offline: 'इंटरनेट कनेक्शन नाही. कृपया तपासून पुन्हा प्रयत्न करा.',
+  photoTooBig: 'हा फोटो खूप मोठा आहे. कृपया नवीन फोटो काढा.',
+  photoType: 'कृपया फोटो (JPG किंवा PNG) निवडा.',
 };
 
 const ALL: Record<Lang, Strings> = { en, hi, mr };
 
 export function getStrings(lang: Lang): Strings {
   return ALL[lang];
+}
+
+// Turns any error into a short sentence in the user's language
+export function friendlyError(err: unknown, s: Strings): string {
+  if (err instanceof ApiError) {
+    if (err.status === 0) return s.offline // no network at all
+    if (err.status === 413) return s.photoTooBig
+    if (err.status === 415) return s.photoType
+  }
+  return s.status.error // everything else: "Something went wrong. Please try again…"
 }

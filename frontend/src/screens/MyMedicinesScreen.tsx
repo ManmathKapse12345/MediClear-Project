@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api'
 import AlertList from '../components/AlertList.tsx'
-import { getStrings } from '../i18n'
+import { friendlyError, getStrings } from '../i18n'
 import type { Lang, MedicineListResponse } from '../types'
 
 // Dates in the user's language, e.g. "9 October 2026" / "९ ऑक्टोबर २०२६"
@@ -15,7 +15,7 @@ type Props = {
 export default function MyMedicinesScreen({ lang, onFindMedicine }: Props) {
   const s = getStrings(lang)
   const [data, setData] = useState<MedicineListResponse | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<Error | null>(null)
   const [attempt, setAttempt] = useState(0) // bump to reload the list
   const [confirmId, setConfirmId] = useState<number | null>(null) // which "Remove" was tapped
   const [busyId, setBusyId] = useState<number | null>(null) // which delete is in progress
@@ -28,7 +28,7 @@ export default function MyMedicinesScreen({ lang, onFindMedicine }: Props) {
         if (!ignore) setData(d)
       })
       .catch((err: Error) => {
-        if (!ignore) setError(err.message)
+        if (!ignore) setError(err)
       })
     return () => {
       ignore = true
@@ -47,7 +47,7 @@ export default function MyMedicinesScreen({ lang, onFindMedicine }: Props) {
       setConfirmId(null)
       reload() // fetch again: the alerts must be recalculated by the backend
     } catch (err) {
-      setError(err instanceof Error ? err.message : s.status.error)
+      setError(err as Error)
     } finally {
       setBusyId(null)
     }
@@ -56,7 +56,7 @@ export default function MyMedicinesScreen({ lang, onFindMedicine }: Props) {
   if (error) {
     return (
       <div className="message error" role="alert">
-        <p>{error}</p>
+        <p>{friendlyError(error, s)}</p>
         <div className="actions">
           <button onClick={reload}>{s.tryAgain}</button>
         </div>

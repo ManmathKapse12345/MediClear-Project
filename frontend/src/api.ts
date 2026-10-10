@@ -18,10 +18,22 @@ const DEVICE_KEY = 'mediclear-device-id'
 export function getDeviceId(): string {
   let id = localStorage.getItem(DEVICE_KEY)
   if (!id) {
-    id = crypto.randomUUID()
+    id = newUuid()
     localStorage.setItem(DEVICE_KEY, id)
   }
   return id
+}
+
+function newUuid(): string {
+  // randomUUID exists only on https:// and localhost
+  if (typeof crypto.randomUUID === 'function') return crypto.randomUUID()
+
+  // Fallback (e.g. a phone on http://192.168...): build a version-4 UUID by hand
+  const b = crypto.getRandomValues(new Uint8Array(16))
+  b[6] = (b[6] & 0x0f) | 0x40 // version 4
+  b[8] = (b[8] & 0x3f) | 0x80 // variant bits
+  const h = Array.from(b, (x) => x.toString(16).padStart(2, '0')).join('')
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`
 }
 
 // ---- Errors ----

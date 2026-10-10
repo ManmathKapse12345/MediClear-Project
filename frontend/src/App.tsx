@@ -3,7 +3,6 @@ import type { Drug, Lang } from "./types";
 import { useState } from "react";
 import { LANGS, getStrings } from "./i18n";
 import ScanScreen from "./screens/ScanScreen.tsx";
-import "./App.css";
 import ExplainScreen from "./screens/ExplainScreen.tsx";
 import MyMedicinesScreen from "./screens/MyMedicinesScreen.tsx";
 
@@ -25,6 +24,12 @@ function App() {
   function changeLang(next: Lang) {
     setLang(next);
     localStorage.setItem(LANG_KEY, next);
+  }
+
+  // Switch tab and start at the top of the page
+  function goTo(next: Tab) {
+    setTab(next);
+    window.scrollTo({ top: 0 });
   }
 
   function openExplain(key: string, name: string) {
@@ -62,7 +67,7 @@ function App() {
           <button
             key={t.id}
             aria-current={tab === t.id ? "page" : undefined}
-            onClick={() => setTab(t.id)}
+            onClick={() => goTo(t.id)}
           >
             {t.label}
           </button>
@@ -70,18 +75,21 @@ function App() {
       </nav>
 
       <main className="content">
-        {tab === "scan" && <ScanScreen lang={lang} onExplain={openExplain} />}
+        {/* Scan stays mounted (just hidden) so its result survives tab switches */}
+        <div hidden={tab !== "scan"}>
+          <ScanScreen lang={lang} onExplain={openExplain} />
+        </div>
         {tab === "explain" && (
           <ExplainScreen
             key={`${drug?.key}-${lang}`}
             lang={lang}
             drugKey={drug?.key ?? null}
-            onFindMedicine={() => setTab("scan")}
+            onFindMedicine={() => goTo("scan")}
           />
         )}
-        {tab === "ask" && <AskScreen lang={lang} drug={drug} />}
+        {tab === "ask" && <AskScreen key={lang} lang={lang} drug={drug} />}
         {tab === "mine" && (
-          <MyMedicinesScreen lang={lang} onFindMedicine={() => setTab("scan")} />
+          <MyMedicinesScreen lang={lang} onFindMedicine={() => goTo("scan")} />
         )}
       </main>
 

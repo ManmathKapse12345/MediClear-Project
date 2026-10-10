@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
 import { api } from '../api'
-import { getStrings } from '../i18n'
+import { friendlyError, getStrings } from '../i18n'
 import type { IdentifyResponse, Lang } from '../types'
 
 type Props = {
@@ -14,7 +14,7 @@ export default function ScanScreen({ lang, onExplain }: Props) {
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState<IdentifyResponse | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<Error | null>(null)
   const [saved, setSaved] = useState(false)
 
   // Shared by text search and photo: reset, call the backend, store the result
@@ -26,7 +26,7 @@ export default function ScanScreen({ lang, onExplain }: Props) {
     try {
       setResult(await call())
     } catch (err) {
-      setError(err instanceof Error ? err.message : s.status.error)
+      setError(err as Error)
     } finally {
       setLoading(false)
     }
@@ -53,7 +53,7 @@ export default function ScanScreen({ lang, onExplain }: Props) {
       await api.saveMedicine({ label, ingredients: result.ingredients.map((i) => i.key) })
       setSaved(true)
     } catch (err) {
-      setError(err instanceof Error ? err.message : s.status.error)
+      setError(err as Error)
     }
   }
 
@@ -94,7 +94,7 @@ export default function ScanScreen({ lang, onExplain }: Props) {
 
       {error && (
         <p className="message error" role="alert">
-          {error}
+          {friendlyError(error, s)}
         </p>
       )}
 
