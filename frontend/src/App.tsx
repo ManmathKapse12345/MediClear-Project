@@ -5,6 +5,7 @@ import { LANGS, getStrings } from "./i18n";
 import ScanScreen from "./screens/ScanScreen.tsx";
 import "./App.css";
 import ExplainScreen from "./screens/ExplainScreen.tsx";
+import MyMedicinesScreen from "./screens/MyMedicinesScreen.tsx";
 
 type Tab = "scan" | "explain" | "ask" | "mine";
 
@@ -79,7 +80,9 @@ function App() {
           />
         )}
         {tab === "ask" && <AskScreen lang={lang} drug={drug} />}
-        {tab === "mine" && <p>{s.comingSoon}</p>}
+        {tab === "mine" && (
+          <MyMedicinesScreen lang={lang} onFindMedicine={() => setTab("scan")} />
+        )}
       </main>
 
       <footer className="disclaimer">{s.disclaimer}</footer>

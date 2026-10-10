@@ -1,4 +1,4 @@
-import type { IdentifyStatus, Lang } from "./types";
+import type { AlertLevel, IdentifyStatus, Lang } from './types'
 
 export const LANGS: { code: Lang; label: string }[] = [
   { code: "en", label: "English" },
@@ -62,6 +62,27 @@ const en = {
   askAbout: 'My question is about:',
   askButton: 'Ask',
   call112: '📞 Call 112',
+    // My medicines screen
+  mineTitle: 'My medicines',
+  mineEmpty: 'You have not saved any medicines yet.',
+  remove: 'Remove',
+  confirmRemove: 'Yes, remove',
+  cancel: 'Cancel',
+  savedOn: 'Saved on:',
+  alertsTitle: 'Check before taking these together',
+  noAlerts:
+    'We found no known problems between your saved medicines. Always tell your doctor about every medicine you take.',
+  detailsInEnglish: 'Details (in English):',
+  level: {
+    warning: 'Warning',
+    caution: 'Caution',
+    timing: 'Timing',
+  } as Record<AlertLevel, string>,
+  levelAdvice: {
+    warning: 'Do not take these together unless your doctor says so.',
+    caution: 'Tell your doctor or pharmacist that you take both.',
+    timing: 'These can be taken, but not at the same time.',
+  } as Record<AlertLevel, string>,
 };
 
 // Every language must have exactly the same keys as English.
@@ -120,6 +141,26 @@ const hi: Strings = {
   askAbout: 'सवाल इस दवा के बारे में है:',
   askButton: 'पूछें',
   call112: '📞 112 पर कॉल करें',
+  mineTitle: 'मेरी दवाएँ',
+  mineEmpty: 'आपने अभी तक कोई दवा नहीं जोड़ी है।',
+  remove: 'हटाएँ',
+  confirmRemove: 'हाँ, हटाएँ',
+  cancel: 'रद्द करें',
+  savedOn: 'जोड़ने की तारीख:',
+  alertsTitle: 'इन दवाओं को साथ लेने से पहले ध्यान दें',
+  noAlerts:
+    'आपकी जोड़ी गई दवाओं के बीच हमें कोई ज्ञात समस्या नहीं मिली। फिर भी अपने डॉक्टर को अपनी सभी दवाओं के बारे में ज़रूर बताएँ।',
+  detailsInEnglish: 'पूरी जानकारी (अंग्रेज़ी में):',
+  level: {
+    warning: 'चेतावनी',
+    caution: 'सावधानी',
+    timing: 'समय का ध्यान',
+  },
+  levelAdvice: {
+    warning: 'डॉक्टर की सलाह के बिना इन्हें साथ में न लें।',
+    caution: 'अपने डॉक्टर या फ़ार्मासिस्ट को बताएँ कि आप दोनों दवाएँ लेते हैं।',
+    timing: 'इन्हें ले सकते हैं, लेकिन एक ही समय पर नहीं।',
+  },
 };
 
 const mr: Strings = {
@@ -174,6 +215,26 @@ const mr: Strings = {
   askAbout: 'प्रश्न या औषधाबद्दल आहे:',
   askButton: 'विचारा',
   call112: '📞 112 वर कॉल करा',
+  mineTitle: 'माझी औषधे',
+  mineEmpty: 'तुम्ही अजून कोणतेही औषध जोडलेले नाही.',
+  remove: 'काढा',
+  confirmRemove: 'होय, काढा',
+  cancel: 'रद्द करा',
+  savedOn: 'जोडल्याची तारीख:',
+  alertsTitle: 'ही औषधे एकत्र घेण्यापूर्वी लक्ष द्या',
+  noAlerts:
+    'तुमच्या जोडलेल्या औषधांमध्ये आम्हाला कोणतीही ज्ञात समस्या आढळली नाही. तरीही तुम्ही घेत असलेल्या सर्व औषधांबद्दल डॉक्टरांना नक्की सांगा.',
+  detailsInEnglish: 'संपूर्ण माहिती (इंग्रजीत):',
+  level: {
+    warning: 'इशारा',
+    caution: 'सावधगिरी',
+    timing: 'वेळेकडे लक्ष द्या',
+  },
+  levelAdvice: {
+    warning: 'डॉक्टरांनी सांगितल्याशिवाय ही औषधे एकत्र घेऊ नका.',
+    caution: 'तुम्ही दोन्ही औषधे घेता हे तुमच्या डॉक्टर किंवा फार्मासिस्टला सांगा.',
+    timing: 'ही औषधे घेता येतात, पण एकाच वेळी नाही.',
+  },
 };
 
 const ALL: Record<Lang, Strings> = { en, hi, mr };
