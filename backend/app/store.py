@@ -1,6 +1,6 @@
 """SQLite storage: saved medicines per device, and cached LLM explanations."""
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from sqlmodel import Field, Session, SQLModel, create_engine
 
@@ -15,7 +15,7 @@ class SavedMedicine(SQLModel, table=True):
     device_id: str = Field(index=True)
     label: str
     ingredients: str  # JSON list of drugs.json keys, e.g. '["telmisartan", "amlodipine"]'
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     def ingredient_keys(self) -> list[str]:
         return json.loads(self.ingredients)

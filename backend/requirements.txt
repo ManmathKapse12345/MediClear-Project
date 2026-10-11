@@ -8,4 +8,4 @@ httpx
 google-genai
 gTTS
 sqlmodel
-ruff
+ruff==0.17.0
